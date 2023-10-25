@@ -17,5 +17,5 @@ jobs:
 
   call-workflow-in-local-repo:
     uses: .github/workflows/resuable-workflow-1.yml@main
-    with: 
-     node: 8
+    with:
+      node: 8
