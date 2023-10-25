@@ -1,0 +1,17 @@
+name: parent_workflow
+
+tasks:
+  - name: start
+    action: runpy
+    on-run:
+      python_callable: parent_invoke_child
+    inputs:
+      message: "hello from parent"
+
+  - name: end
+    action: End
+
+edges:
+  - name: start_to_end
+    upstream_task: start
+    downstream_task: end
