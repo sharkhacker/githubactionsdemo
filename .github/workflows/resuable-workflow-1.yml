@@ -2,10 +2,14 @@ name: resuable workflow 1
 
 on: 
   workflow_call:
+     inputs:
+       node:
+        required: true
+        type: string
 
 jobs:
 
-  ru1-job1:
+  build:
   
      runs-on: ubuntu-latest
   
@@ -13,6 +17,6 @@ jobs:
 
          - uses: actions/checkout@v3
 
-         - name: write something in log
-
-               echo "I am resuable workflow 1 here called"
+         - name: output the input value
+           run: |
+             echo "the node version to use is: ${{inputs.node}}"
