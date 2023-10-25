@@ -14,9 +14,9 @@ jobs:
      -uses: actions/checkout@3
 
      -name: Run a multi-line script
-      run:
+      run: |
          echo Add other actions to build,
-         echo test, and deploy your project
+         echo test, and deploy your project.
 
          
          
