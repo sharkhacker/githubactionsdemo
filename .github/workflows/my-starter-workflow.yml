@@ -1,26 +1,20 @@
-name: my starter workflow
+name: My Starter Workflow
 
 on:
   workflow_dispatch:
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
 
-   build:
+    steps:
+      - uses: actions/checkout@v3
 
-     runs-on: ubuntu-latest
+      - name: Run a multi-line script
+          run:|
+          echo Add other actions to build,
+          echo test, and deploy your project.
 
-   setps:
-
-     -uses: actions/checkout@3
-
-     -name: Run a multi-line script
-      run: |
-         echo Add other actions to build,
-         echo test, and deploy your project.
-
-         
-         
 call-workflow-in-local-repo:
-    uses: ./.github/workflows/reusable-workflow-1.yml
-    with:
-        node:8
+  uses: ./.github/workflows/reusable-workflow-1.yml
+  with: node:8
